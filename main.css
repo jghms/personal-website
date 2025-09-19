@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+:root {
+  --primary-color: #EF634A;
+  --primary-color-light: #F5A78A;
+  --primary-color-dark: #C3412B;
+  --secondary-color: #BDD3CE;
+  --secondary-color-light: #7FB3E6;
+  --secondary-color-dark: #357ABD;
+  --background-color: #EFE5D1;
+  --text-color: #1E1E1E;
+  --font-family: 'Quicksand', 'Open Sans', sans-serif;
+  --font-size: 20px;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  --transition-duration: 0.3s;
+  --transition-ease: ease-in-out;
+
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.5rem;
+  --spacing-6: 2rem;
+
+  --font-size-small: 0.875rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 1.25rem;
+  --font-size-xlarge: 1.5rem;
+
+  --max-width: 1200px;
+  --min-width: 320px;
+  --header-height: 60px;
+  --footer-height: 40px;
+  --z-index-header: 1000;
+  --z-index-footer: 900;
+  --opacity-disabled: 0.5;
+  --opacity-hover: 0.8;
+  --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
+  --shadow-active: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* maple-mono-latin-400-normal */
+@font-face {
+  font-family: 'Maple Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-400-normal.woff) format('woff');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  padding: 0 var(--spacing-6);
+  padding-top: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 var(--spacing-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: var(--font-size-large);
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  font-family: var(--font-family);
+  font-size: var(--font-size-medium);
+  color: var(--text-color);
+  text-decoration: none;
+  padding: var(--spacing-2) 0;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-duration) var(--transition-ease), color var(--transition-duration) var(--transition-ease);
+}
+
+nav > ul {  
+  padding-inline-start: 0;
+  margin: var(--spacing-5) 0;
+}
+
+nav > ul > li {
+  list-style: none;
+  display: inline;
+  margin-left: var(--spacing-4);
+}
+
+#home-link {
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  gap: var(--spacing-6);
+}
+
+#left {
+  /*flex: 0 0 300px;*/
+  width: 50%;
+  position: sticky;
+  top: var(--header-height);
+  padding-top: var(--spacing-5);
+  align-self: flex-start;
+}
+
+#right {
+  /*flex: 0 0 300px;*/
+  width: 50%;
+  height: fit-content;
+  padding-top: calc(var(--header-height) + var(--spacing-5));
+  padding-bottom: 10rem;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+
+@media(max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding-top: var(--header-height);
+  }
+
+  header {
+    position: static;
+    padding: 0;
+  }
+
+  #left {
+    position: static;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+  }
+
+  #left, #right {
+    width: 100%;
+    padding-top: var(--spacing-5);
+  }
+
+  #right {
+    padding-bottom: 5rem;
+  }
+}
+
+#about-me {
+  font-size: var(--font-size-medium);
+  line-height: 1.6;
+  margin-top: var(--spacing-4);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-medium);
+  cursor: pointer;
+  transition: background-color var(--transition-duration) var(--transition-ease), box-shadow var(--transition-duration) var(--transition-ease);
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--spacing-4);
+}
+
+main h1 {
+  position: relative;
+  display: inline-block;     /* shrink underline to text width */
+  font-weight: bold;
+
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  text-decoration-thickness: 0.4rem;
+}
+
+.call-to-action {
+  display: flex;
+  margin-top: 5rem;
+  flex-direction: column;
+  font-size: var(--font-size-large);
+}
+
+@keyframes slideIn {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+main h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;              /* space below text */
+  height: 3px;
+  width: 100%;                  /* hidden initially */
+  background: var(--primary-color);  /* match text color */
+  animation: slideIn 0.5s forwards; 
+}
+
+/* footer should be below everything but if content is shorter than 100vh, it should be at the very bottom of the page */
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--footer-height);
+  background-color: transparent;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-small);
+  z-index: var(--z-index-footer);
+}
+
+.resume-list, .resume-list a {
+  padding-inline-start: 0;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.resume-item > h4 {
+  position: relative;
+  display: inline-block;     /* shrink underline to text width */
+  cursor: pointer;
+  font-weight: bold;
+  margin: var(--spacing-5) 0 var(--spacing-2) 0;
+}
+
+/* The underline */
+.resume-item > h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;              /* space below text */
+  height: 2px;
+  width: 0;                  /* hidden initially */
+  background: var(--primary-color);  /* match text color */
+  transition: width 0.3s ease;
+}
+
+/* On hover: animate underline */
+.resume-item:hover > h4::after {
+  width: 100%;
+}
+
+.resume-item:hover > h4 {
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  text-decoration-thickness: 0.2rem;
+
+  /* underline should be animated and slide from the left */
+  transition: text-
+}
+
+.resume-item {
+  list-style: none;
+}
+
+.badges {
+  margin-top: var(--spacing-2);
+  display: flex;
+  gap: var(--spacing-1);
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--primary-color-light);
+  color: white;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-small);
+}
+

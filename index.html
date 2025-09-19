@@ -1,0 +1,141 @@
+<!--Start with a basic HTML5 template:-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/">jghms.dev</a>
+      <nav>
+      </nav>
+    </header>
+    <main>
+      <section id="left">
+        <div class="profile">
+          <div>
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+          </div>
+          <div>
+            <h1>Jan-Gerrit Harms</h1>
+          </div>
+          <h3>Software Engineer</h3>
+          <p>I build scalable software systems that are easy to maintain and deliver value to users.</p>
+
+          <div class="call-to-action">
+            <p>
+              Need help with your next project?
+            </p>
+            <div>
+              <form action="mailto:info@jghms.dev?subject=Inquiry">
+                <input type="submit" value="Email me" class="btn-primary">
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="right">
+        <div id="about-me">
+        <p>Hi, I am Jan. I design, build, deploy and operate Software Systems.
+          My favorite work is at the interface between engineering and 
+          users. I love working in multi-disciplinary teams.</p>
+
+        <p>Currently, I work as a self-employed software engineer in the 
+          Netherlands. My current gig is at PwC in Amsterdam.
+          Previously I co-founded a startup involved in customs 
+          clearance, worked at a venture studio that collaborated
+          with Port of Rotterdam, ABN Amro and Standard&Poor 
+          among others and was a graduate student at Delft University 
+          of Technology.</p>
+        <p>When not working I enjoy cooking, being active (running, cycling, hiking) 
+          and following the latest trends in software development.</p>
+        </div>
+        <br />
+        <h2>resumé</h2>
+        <ul class="resume-list">
+          <a href="https://www.pwc.com" target="_blank" rel="noopener noreferrer">
+            <li class="resume-item">
+              <h4>Self-employed Software Engineer</h4>
+              <p>I help companies design, build and operate scalable software systems. Currently, I am at PwC, working on the redesign and implementation of a web-based application platform.</p>
+              <div class="badges">
+                <span class="badge">Systems design</span>
+                <span class="badge">Golang</span>
+                <span class="badge">Kubernetes</span>
+                <span class="badge">Javascript</span>
+                <span class="badge">React</span>
+                <span class="badge">Python</span>
+              </div>
+            </li>
+          </a>
+          <a href="https://quayconnect.io" target="_blank" rel="noopener noreferrer">
+            <li class="resume-item">
+              <h4>Co-Founder & CTO, QuayConnect (2023 - 2025)</h4>
+              <p>Co-founded a startup focused on simplifying customs clearance processes. Led the development of the core platform, overseeing both frontend and backend engineering.</p>
+              <!-- badges for technology used -->
+              <div class="badges">
+                <span class="badge">Systems design</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">Node.js</span>
+                <span class="badge">React</span>
+                <span class="badge">Google Cloud</span>
+                <span class="badge">Golang</span>
+              </div>
+            </li>
+          </a>
+          <a href="https://docklab.nl" target="_blank" rel="noopener noreferrer">
+            <li class="resume-item">
+              <h4>Software Engineer, Engineering manager, Docklab (2018 - 2023)</h4>
+              <p>Designed and built greenfield software solutions in the logistics and energy sector, collaborating with Port of Rotterdam, ABN Amro, and Standard&Poor among others. Grew the engineering team from 3 to 20.</p>
+              <div class="badges">
+                <span class="badge">Golang</span>
+                <span class="badge">Terraform</span>
+                <span class="badge">Systems design</span>
+                <span class="badge">Kubernetes</span>
+                <span class="badge">Solidity</span>
+                <span class="badge">Typescript</span>
+                <span class="badge">React</span>
+              </div>
+            </li>
+          </a>
+          <a href="https://www.blockchain-lab.org/" target="_blank" rel="noopener noreferrer">
+            <li class="resume-item">
+              <h4>MSc Computer Science, Distributed Systems, TU Delft (2018)</h4>
+              <p>Completed by MSc in Computer Science at TU Delft. Thesis on the topic of consus algorithms in DAG Blockchains at the Distributed systems department. I also published a short survey paper on conversational agents titled <i>Approaches for Dialog Management in Conversational Agents</i></p>
+              <div class="badges">
+                <span class="badge">Python</span>
+                <span class="badge">Distributed systems</span>
+                <span class="badge">Systems design</span>
+                <span class="badge">React</span>
+              </div>
+            </li>
+          </a>
+          <a href="https://www.welbo.eu/" target="_blank" rel="noopener noreferrer">
+            <li class="resume-item">
+              <h4>Robotics Engineer, Welbo (2015-2018)</h4>
+              <p>We built software for social robots to welcome and guide visitors at office buildings and public places. I built and operated the backend system and on-device software.</p>
+              <div class="badges">
+                <span class="badge">C++</span>
+                <span class="badge">Python</span>
+                <span class="badge">React</span>
+                <span class="badge"></span>
+                <span class="badge">Solidity</span>
+                <span class="badge">Typescript</span>
+                <span class="badge">React</span>
+              </div>
+            </li>
+          </a>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Made with ❤️ by me</p>
+    </footer>
+  </body>
