@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 
 :root {
@@ -42,15 +40,6 @@
   --opacity-hover: 0.8;
   --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
   --shadow-active: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* maple-mono-latin-400-normal */
-@font-face {
-  font-family: 'Maple Mono';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-400-normal.woff) format('woff');
 }
 
 * {
@@ -148,16 +137,61 @@ main {
   scroll-behavior: smooth;
 }
 
+.profile-pic {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--spacing-4);
+}
+
+main h1 {
+  position: relative;
+  display: inline-block;     /* shrink underline to text width */
+  font-weight: bold;
+
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  text-decoration-thickness: 0.4rem;
+}
+
+main h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;              /* space below text */
+  height: 3px;
+  width: 100%;                  /* hidden initially */
+  background: var(--primary-color);  /* match text color */
+  animation: slideIn 0.5s forwards; 
+}
+
 
 @media(max-width: 768px) {
+
   main {
     flex-direction: column;
     padding-top: var(--header-height);
   }
 
+  .profile-pic {
+    width: 12rem;
+    height: 12rem;
+  }
+
   header {
     position: static;
     padding: 0;
+  }
+
+  main h1 {
+    font-size: var(--font-size-xlarge);
+    text-decoration-thickness: 0.3rem;
+  }
+
+  main h1::after {
+    bottom: -0.4rem;
+    height: 2px;
   }
 
   #left {
@@ -194,24 +228,6 @@ main {
   transition: background-color var(--transition-duration) var(--transition-ease), box-shadow var(--transition-duration) var(--transition-ease);
 }
 
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: var(--spacing-4);
-}
-
-main h1 {
-  position: relative;
-  display: inline-block;     /* shrink underline to text width */
-  font-weight: bold;
-
-  text-decoration: underline;
-  text-decoration-color: var(--primary-color);
-  text-decoration-thickness: 0.4rem;
-}
-
 .call-to-action {
   display: flex;
   margin-top: 5rem;
@@ -226,17 +242,6 @@ main h1 {
   to {
     width: 100%;
   }
-}
-
-main h1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.5rem;              /* space below text */
-  height: 3px;
-  width: 100%;                  /* hidden initially */
-  background: var(--primary-color);  /* match text color */
-  animation: slideIn 0.5s forwards; 
 }
 
 /* footer should be below everything but if content is shorter than 100vh, it should be at the very bottom of the page */
@@ -255,48 +260,45 @@ footer {
   z-index: var(--z-index-footer);
 }
 
+#right h2 {
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  text-decoration-thickness: 0.2rem;
+}
+
 .resume-list, .resume-list a {
+  display: inline;
   padding-inline-start: 0;
   text-decoration: none;
   color: var(--text-color);
 }
 
-.resume-item > h4 {
+.resume-list a::after {
+  display: inline-block;
+  content: url("./arrow.svg");
+  font-size: var(--font-size-small);
+  width: 1rem;
+  height: 1rem;
+}
+
+.resume-item h4 {
   position: relative;
-  display: inline-block;     /* shrink underline to text width */
+  display: inline;     /* shrink underline to text width */
   cursor: pointer;
   font-weight: bold;
   margin: var(--spacing-5) 0 var(--spacing-2) 0;
 }
 
-/* The underline */
-.resume-item > h4::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.3rem;              /* space below text */
-  height: 2px;
-  width: 0;                  /* hidden initially */
-  background: var(--primary-color);  /* match text color */
-  transition: width 0.3s ease;
-}
-
 /* On hover: animate underline */
-.resume-item:hover > h4::after {
-  width: 100%;
-}
-
-.resume-item:hover > h4 {
+.resume-item h4:hover {
   text-decoration: underline;
-  text-decoration-color: var(--primary-color);
+  text-decoration-color: var(--primary-color); 
   text-decoration-thickness: 0.2rem;
-
-  /* underline should be animated and slide from the left */
-  transition: text-
 }
 
 .resume-item {
   list-style: none;
+  margin-bottom: var(--spacing-6);
 }
 
 .badges {
